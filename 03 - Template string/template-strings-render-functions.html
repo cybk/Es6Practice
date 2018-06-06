@@ -12,6 +12,23 @@
     keywords: ['pale', 'cloudy', 'spiced', 'crisp']
   };
 
+  function renderKeywords (keywords){
+    return `
+      <ul>
+        ${keywords.map(key => `<li>${key}</li>`).join('')}
+      </ul>
+    `;
+  }
+  
+  const markup = `
+    <div class='beer'>
+      <h2>${beer.name}</h2>
+      <p class='brewery'>${beer.brewery}</p>
+      ${renderKeywords(beer.keywords)}
+    </div>
+  `;
+  
+  document.body.innerHTML = markup;
 </script>
 </body>
 </html>
