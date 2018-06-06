@@ -35,6 +35,7 @@
     });
     
     return strings.reduce((sentence, string, i) => {
+      console.log(sentence, string);
       return `${sentence} ${string} ${abbreviated[i]||''}`;
     }, '')
   }
