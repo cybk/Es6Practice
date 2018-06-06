@@ -24,7 +24,28 @@
 
   const first = 'Wes';
   const last = 'Bos';
+  
+  function addAbbreviations(strings, ...values){
+    const abbreviated = values.map(mp => {
+      if (dict[mp]){
+        return `<abbr title='${dict[mp]}'>${mp}</abbr>`
+      }
+      
+      return mp;
+    });
+    
+    return strings.reduce((sentence, string, i) => {
+      return `${sentence} ${string} ${abbreviated[i]||''}`;
+    }, '')
+  }
+  
+  const sentence = addAbbreviations`Hi my name is ${first} ${last} and I love to code ${'JS'}, ${'HTML'} and ${'CSS'} all day and all night long!`
+  
+  const bio = document.querySelector('.bio');
+  const p =  document.createElement('p');
 
+  p.innerHTML = sentence;
+  bio.appendChild(p);
 </script>
 </body>
 </html>
