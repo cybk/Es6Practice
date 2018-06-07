@@ -6,6 +6,7 @@
 </head>
 <body>
 
+
 <script>
   const apple = {
     color: 'Red',
@@ -14,6 +15,14 @@
     sugar: 10
   };
 
+  for(const prop of Object.keys(apple)){
+    console.log(prop);
+  }
+  
+  for (const prop in apple){
+    const value = apple[prop];
+    console.log(value, prop);
+  }
 
 </script>
 </body>
