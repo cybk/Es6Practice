@@ -23,8 +23,14 @@ const colour = 'Royal Blue';
 
 // .repeat()
 
+function leftPad(str, len = 20){
+  return `-> ${' '.repeat(len - str.length)}${str}`;
+}
 
-
+  console.log(leftPad(make));
+  console.log(leftPad(model));
+  console.log(leftPad(colour));
+  
 </script>
 
 </body>
