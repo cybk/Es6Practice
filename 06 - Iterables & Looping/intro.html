@@ -20,8 +20,24 @@
   };
 
   const cuts = ['Chuck', 'Brisket', 'Shank', 'Short Rib'];
-
-  cuts.shop = 'MM MEats';
+  const shop = 'MM Meats';
+  
+  //for (let i = 0; i < cuts.length; i++){
+  //  console.log(cuts[i]);
+  //}
+  
+ // cuts.forEach((elem) => {
+ //   console.log(elem);
+ //  
+ // });
+  
+ for (const cut of cuts){
+   if (cut === 'Brisket'){
+     continue
+   }
+   
+   console.log(cut);
+ }
 
 
 </script>
