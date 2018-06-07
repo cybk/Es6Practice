@@ -179,10 +179,12 @@
   ];
   const code = 'BAF_KY4wcRY';
   
-  const post = posts.find(ps =>  ps.code === code );
-  
+  const post = posts.find(ps =>  ps.code === code );  
   console.log(post);
-
+  
+  const cd2 = "VBgtGQcSf";
+  const postIndex = posts.findIndex(ps => ps.code === cd2);
+  console.log(postIndex);
 </script>
 </body>
 </html>
