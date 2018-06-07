@@ -8,7 +8,11 @@
 <script>
   let inRing = 'Hulk Hogan';
   let onSide = 'The Rock';
-
+  
+  console.log(`before: ${inRing}, ${onSide}`);
+  [inRing, onSide] = [onSide, inRing];
+  console.log(`after: ${inRing}, ${onSide}`);
+  
 </script>
 </body>
 </html>
