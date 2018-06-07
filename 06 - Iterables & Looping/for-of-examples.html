@@ -34,9 +34,17 @@
   
   //addUpNumbers(10, 23, 52, 34, 142, 13, 123);
   
-  const name = 'Wes Bos';
-  for(const char of name){
-    console.log(char);
+  //const name = 'Wes Bos';
+  //for(const char of name){
+  //  console.log(char);
+  //}
+  
+  const ps = document.querySelectorAll('p');
+  
+  for(const p of ps){
+    p.addEventListener('click', function(e) {
+      console.log(this.textContent);
+    });
   }
 </script>
 </body>
