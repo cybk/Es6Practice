@@ -18,7 +18,10 @@
 <script>
   const cuts = ['Chuck', 'Brisket', 'Shank', 'Short Rib'];
 
-
+  for(const [i, cut] of cuts.entries()){
+    console.log(`${cut} is the ${i+1} item`);
+  }
+  
 </script>
 </body>
 </html>
