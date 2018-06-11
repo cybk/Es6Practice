@@ -10,6 +10,19 @@
   const featured = ['Deep Dish', 'Pepperoni', 'Hawaiian'];
   const specialty = ['Meatzza', 'Spicy Mama', 'Margherita'];
 
+  const pizzas = [...featured, 'veg', ...specialty];
+  const fridayPizzas = [...pizzas];
+  
+  fridayPizzas[0] = 'Burguer'
+  console.table(pizzas);
+  console.table(fridayPizzas);
+  const deepDisch = {
+    pizzaName: 'Deep Dish',
+    size: 'Medium',
+    ingredientes: ['Marinara', 'Italian Sausage', 'Dough', 'Cheese']
+  }
+  
+  
 </script>
 </body>
 </html>
