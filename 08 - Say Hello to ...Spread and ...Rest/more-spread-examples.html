@@ -11,13 +11,17 @@
     <p>Randy</p>
   </div>
 <script>
-  
+  const people = document.querySelectorAll('.people p');
+  const names = [...people].map(p => p.textContent);
 
   const deepDish = {
     pizzaName: 'Deep Dish',
     size: 'Medium',
     ingredients: ['Marinara', 'Italian Sausage', 'Dough', 'Cheese']
   };
+  
+  const shoppingList = ['Milk', 'Flour', ...deepDish.ingredients];
+  console.table(shoppingList);
 
   const comments = [
     { id: 209384, text: 'I love your dog!' },
@@ -25,7 +29,15 @@
     { id: 632429, text: 'You are so dumb' },
     { id: 192834, text: 'Nice work on this wes!' },
   ];
+  
+  const id = 632429;
+  
+  const commentIndex = comments.findIndex(comment=> comment.id === id);
+  console.log(commentIndex);
 
+  const newComments = [...comments.slice(0, commentIndex), ...comments.slice(commentIndex + 1)];
+  console.table(newComments);
+  
 </script>
 </body>
 </html>
