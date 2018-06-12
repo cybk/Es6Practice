@@ -19,14 +19,22 @@
     }, 500);
   });
 
-  const postsPromise = fetch('https://wesbos.com/wp-json/wp/v2/posts');
-  const streetCarsPromise = fetch('https://data.ratp.fr/api/datasets/1.0/search/?q=paris');
-
   Promise
     .all([weather, tweets])
     .then(responses =>{
       const[weather, tweets] = responses;
       console.log(weather, tweets);
+    });
+  
+  const postsPromise = fetch('https://wesbos.com/wp-json/wp/v2/posts');
+  const streetCarsPromise = fetch('https://data.ratp.fr/api/datasets/1.0/search/?q=paris');
+  
+  Promise
+    .all([postsPromise, streetCarsPromise])
+    .then(responses => {
+      return Promise.all(responses.map(rs => rs.json()));
+    }).then(data => {
+      console.log(data);
     });
 
 </script>
