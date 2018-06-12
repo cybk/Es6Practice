@@ -9,6 +9,17 @@
   const inventors = ['Einstein', 'Newton', 'Galileo'];
   const newInventors = ['Musk', 'Jobs'];
  
+  inventors.push(...newInventors);
+  
+  console.log(inventors);
+  
+  function sayHi (firstName, lastName){
+    alert(`Hey there ${firstName} ${lastName}`);
+  }
+  
+  const name = ['juan', 'genial'];
+  
+  sayHi(...name)
 </script>
 </body>
 </html>
