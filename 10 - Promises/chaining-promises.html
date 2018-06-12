@@ -18,6 +18,47 @@
     { name: 'Addy Osmani', twitter: '@addyosmani', bio: 'Googler' },
   ];
 
+  function getPostById(id){
+    // Creating a new promise
+    return new Promise((resolve, reject)=>{
+      // using a timeout in order to simulate a DB call
+      setTimeout(() => {
+        const post = posts.find(post => post.id === id);
+        if (post)
+          resolve(post);
+        else
+          reject(Error('No post was found!'));
+      }, 200);
+    })  
+  }
+  
+  function hydrateAuthor(post){
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const authorDetails = authors.find(person => person.name === post.author)
+        debugger;
+        if (authorDetails){
+          post.author = authorDetails;
+          resolve(post);
+        }
+        else{
+          reject(Error('Cannot find the author'));
+        }
+      }, 200);
+    });
+  }
+  
+  getPostById(2)
+    .then(post => {
+      console.log(post);
+      return hydrateAuthor(post);
+    }).then(author => {
+      console.log(author);
+    }).catch(err => {
+      console.error(err);
+    });
+  
+  
 </script>
 </body>
 </html>
