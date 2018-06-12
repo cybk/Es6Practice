@@ -9,12 +9,25 @@
   const wes = Symbol('Wes');
   const person = Symbol('Wes');
 
+  //symbols are unique, even if they have same descriptor
+  
   const classRoom = {
     [Symbol('Mark')] : { grade: 50, gender: 'male' },
     [Symbol('olivia')]: { grade: 80, gender: 'female' },
     [Symbol('olivia')]: { grade: 80, gender: 'female' },
   };
 
+  for (person in classRoom){
+    console.log(person);
+  }
+  
+  const syms = Object.getOwnPropertySymbols(classRoom);
+  
+  console.log(syms);
+  
+  const data = syms.map(sym => classRoom[sym]);
+  
+  console.table(data);
 </script>
 </body>
 </html>
