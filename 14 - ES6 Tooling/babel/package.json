@@ -15,13 +15,21 @@
   "babel": {
     "presets": [
       [
-        "env": {
-          "targets": [
-            "last 2 versions",
-            "savari >= 8"
-          ]
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "last 2 versions",
+              "safari >= 7"
+            ]
+          }
         }
       ]
-    ]
+    ],
+ 
+  "plugins": ["syntax-object-rest-spread"]
+  },
+  "devDependencies": {
+    "babel-plugin-syntax-object-rest-spread": "^6.13.0"
   }
 }
