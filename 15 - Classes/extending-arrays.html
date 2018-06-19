@@ -6,6 +6,21 @@
 </head>
 <body>
 <script>
+  class MovieCollection extends Array{
+    constructor(name, ... items){
+      super(...items);
+      this.name = name;
+      
+    }
+  }
+  
+  const movies = new MovieCollection ('Wes\'s Fav Movies',
+     {name: 'Bee Movie', stars: 10},
+     {name: 'Star Wars Trek', stars: 1},
+     {name: 'Virgin Suicides', stars: 7},
+     {name: 'King of the road', stars: 8},
+   );
+  
   
 </script>
 </body>
