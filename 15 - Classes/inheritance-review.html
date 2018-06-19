@@ -11,6 +11,16 @@
     this.breed = breed;
   }
  
+  Dog.prototype.bark = function(){
+    console.log(`Bark Bark! My name is ${this.name}`);
+  }
+  
+  const snickers = new Dog('Snickers', 'King Charles');
+  const sunny = new Dog('Sunny', 'Golden Doodle');
+  
+  Dog.prototype.cuddle = function(){
+    console.log(`I love your owner!`);
+  }
 </script>
 </body>
 </html>
