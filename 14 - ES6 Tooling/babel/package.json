@@ -9,6 +9,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "babel-cli": "^7.0.0-beta.3"
+    "babel-cli": "^7.0.0-beta.3",
+    "babel-preset-env": "^7.0.0-beta.3"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env": {
+          "targets": [
+            "last 2 versions",
+            "savari >= 8"
+          ]
+        }
+      ]
+    ]
   }
 }
