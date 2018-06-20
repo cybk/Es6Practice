@@ -7,6 +7,16 @@
 <body>
 <script>
 
+  function* listPeople(){
+    yield 'Wes';
+    yield 'Kait';
+    yield 'Snickers';
+    
+  }
+ 
+  const people = listPeople();
+  console.log(people);
+  
   const inventors = [
     { first: 'Albert', last: 'Einstein', year: 1879 },
     { first: 'Isaac', last: 'Newton', year: 1643 },
@@ -16,7 +26,14 @@
     { first: 'Nicolaus', last: 'Copernicus', year: 1473 },
     { first: 'Max', last: 'Planck', year: 1858 },
   ];
+  
+  function * loop(arr){
+    for(const item of arr){
+      yield item;
+    }
+  }
 
+  const inventorsGen = loop(inventors);
 </script>
 </body>
 </html>
