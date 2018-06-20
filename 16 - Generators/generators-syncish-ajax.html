@@ -9,7 +9,28 @@
   const urlBeer = 'http://api.react.beer/v2/search?q=hops&type=beer';
   const urlWes = 'https://api.github.com/users/wesbos';
   const urlDis = 'https://api.discogs.com/artists/51988';
+  
+  function ajax(url){
+    fetch(url)
+      .then(data=> data.json())
+      .then(data => dataGen.next(data));
+  }
+  
+  function* steps(){
+    console.log('Fetchin beers');
+    const beers = yield ajax(urlBeer) ;
+    console.log(beers);
+    console.log('fetching wes');
+    const wes = yield ajax(urlWes);
+    console.log(wes);
+    console.log('fetching fat joe');
+    const fatJoe = yield ajax(urlDis);
+    console.log(fatJoe);
+  }
+    
+  const dataGen = steps();
 
+  dataGen.next();
 </script>
 </body>
 </html>
