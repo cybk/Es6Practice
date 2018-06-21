@@ -9,7 +9,25 @@
 
 <body>
   <script>
-
+	  fetch('https://api.github.com/users/wesbos')
+	  	.then(res => res.json())
+	  	.then(data => {
+		  console.log(data);
+	  	}).catch(err => {
+		  console.log(`Errrrrrorrrr!!!! ${err}`);
+	  });
+	  
+	  
+	  const video = document.querySelector('.handsome');
+	  
+	  navigator.mediaDevices.getUserMedia({video:true})
+	  	.then(mediaStream => {
+		  video.srcObject = mediaStream;
+		  video.load();
+		  video.play();
+	  }).catch(err=> {
+		  console.log("Error: " + err);
+	  });
   </script>
 </body>
 
