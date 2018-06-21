@@ -6,7 +6,22 @@
 </head>
 <body>
 <script>
- 
+  const safeHandler = {
+    set(target, name, value){
+      const likeKEy = Object.keys(target).find(k => k.toLowerCase() === name.toLowerCase());
+      
+      if (!(name in target)&& likeKEy){
+        throw new Error(`Oops an errpr fpr key ${name}, there is with case ${likeKEy}`);
+      }
+      target[name] = value;
+    }
+    
+    
+  }
+  
+  const saftey = new Proxy({id: 100}, safeHandler);
+  
+  saftey.ids = 200;
 </script>
 </body>
 </html>
