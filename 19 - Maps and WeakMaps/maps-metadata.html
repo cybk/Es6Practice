@@ -19,7 +19,19 @@
 <button>Dancer 💃</button>
 
 <script>
- 
+	const clickCounts = new Map();
+	const buttons = document.querySelectorAll('button');
+	
+	buttons.forEach(btn => {
+		clickCounts.set(btn, 0);
+		btn.addEventListener('click', function(){
+			const val = clickCounts.get(this);
+			console.log(val);
+			clickCounts.set(this, val + 1);
+			console.log(clickCounts);
+		});
+	})
+	
 </script>
 </body>
 </html>
