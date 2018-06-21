@@ -15,12 +15,30 @@
 			  setTimeout(() => resolve(`Done for ${amount} ms`), amount);
 		  });
 	  }
+	  	  
+	  function catchError(fn){
+		  return function(...args){
+			  return fn(...args).catch(err => console.error(`Error ${err}`));
+		  }
+	  }
 	  
-	  async function go(){
-		  console.log('Start');
-		  await breathe(1000);
+	  async function go(name, last){
+		  console.log(`Start ${name} ${last} process`);
+		  let res = await breathe(1000);
+		  console.log(res);
+		  res = await breathe(2000);
+		  console.log(res);
+		  res = await breathe(300);
+		  console.log(res);
+		  res = await breathe(500);
+		  console.log(res);
+
 		  console.log('End');
 	  }
+	  
+	  const wrappedFunction = catchError(go);
+	  
+	 wrappedFunction('Wes', 'Bos');
   </script>
 </body>
 
