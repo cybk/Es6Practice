@@ -8,11 +8,30 @@
 <body>
   <script>
     async function go() {
-      const p1 = fetch('https://api.github.com/users/wesbos');
-      const p2 = fetch('https://api.github.com/users/stolinski');
+      const p1 = fetch('https://api.github.com/users/wesbos').then(res => res.json());
+      const p2 = fetch('https://api.github.com/users/stolinski').then(res => res.json());
+		
+	  const res = await Promise.all([p1, p2]);
+		console.log(res);
+		
+		//const res = await Promise.all([p1, p2]);
+		
+		res.forEach(rs => {
+			console.log(rs);
+		})
+		
     }
+	  
+	  async function getData(names){
+		  console.log('GetData');
+		  const prom = names.map(nm => fetch(`https://api.github.com/users/${nm}`).then(r=>r.json()));
+		  const [wes, scot] = await Promise.all(prom);
+		  console.log(wes, scot)
+	  }
 
     go();
+	  
+	  getData(['wesbos', 'stolinski'])
   </script>
 </body>
 
